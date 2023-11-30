@@ -179,6 +179,41 @@ def verify_home_page():
         driver.back()
         time.sleep(2)
 
+        image_dot_scroll_4 = WebDriverWait(driver, 10).until(
+            EC.presence_of_element_located((By.XPATH, '//*[@id="premium-carousel-f36cd4e"]/ul/li[4]')))
+        image_dot_scroll_4.click()
+        time.sleep(5)
+        image_4 = WebDriverWait(driver, 10).until(
+            EC.presence_of_element_located((By.XPATH, '//*[@id="slick-slide23"]/div/section/div/div/div/section/div/div[1]/div/div/div/img  ')))
+        if image_4.is_displayed():
+            print("image_4 found")
+        else:
+            print("!!!!!!!!!! Image not found !!!!!!!!!!")
+
+        image_4_title = WebDriverWait(driver, 10).until(
+            EC.presence_of_element_located((By.XPATH, '//*[@id="ind-slider"]/div/h2')))
+        if image_4_title.is_displayed():
+            print(image_4_title.text)
+        else:
+            print("!!!!!!!!!! image_4_title not found !!!!!!!!!!")
+
+        image_4_paragraph = WebDriverWait(driver, 10).until(
+            EC.presence_of_element_located((By.XPATH, '//*[@id="slick-slide23"]/div/section/div/div/div/section/div/div[2]/div/div[2]/div')))
+        if image_4_paragraph.is_displayed():
+            print(image_4_paragraph.text)
+        else:
+            print("!!!!!!!!!! image_4_paragraph not found !!!!!!!!!!")
+
+        click_learn_more_4 = WebDriverWait(driver, 10).until(
+            EC.presence_of_element_located((By.XPATH, '//*[@id="slick-slide23"]/div/section/div/div/div/section/div/div[2]/div/div[3]/div/div/a/span/span[2]')))
+        click_learn_more_4.click()
+        current_url = driver.current_url
+        title = driver.title
+        print("Redirected URL is:", current_url)
+        print("Page Title:", title)
+        driver.back()
+        time.sleep(2)
+
     finally:
         driver.quit()
 
