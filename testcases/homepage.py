@@ -480,6 +480,28 @@ def verify_home_page():
         else:
             print("!!!!!!!!!! engagement_image_3_paragraph not found !!!!!!!!!!")
 
+        # Let's Talk test case execution
+
+        scroll_to_engagement_section = WebDriverWait(driver, 10).until(
+            EC.presence_of_element_located((By.XPATH, '/html/body/div[2]/section[7]/div/div/div/div[3]')))
+        driver.execute_script("arguments[0].scrollIntoView();", scroll_to_engagement_section)
+        time.sleep(1)
+
+        input_name = WebDriverWait(driver, 10).until(
+            EC.presence_of_element_located((By.ID, 'form-field-name')))
+        input_name.send_keys("Shaeekh Khan")
+        time.sleep(2)
+
+        input_email = WebDriverWait(driver, 10).until(
+            EC.presence_of_element_located((By.ID, 'form-field-email')))
+        input_email.send_keys("shaeekkushal@gmail.com")
+        time.sleep(2)
+
+        input_message = WebDriverWait(driver, 10).until(
+            EC.presence_of_element_located((By.ID, 'form-field-field_3edfd51')))
+        input_message.send_keys("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.")
+        time.sleep(2)
+
     finally:
         driver.quit()
 
