@@ -10,6 +10,7 @@ from webdriver_manager.chrome import ChromeDriverManager
 driver = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()))
 
 
+# Open Browser and browse the URL
 def verify_home_page():
     driver.maximize_window()
     driver.get("https://exabyting.com/")
@@ -216,9 +217,9 @@ def verify_home_page():
 
         # Development practices section test case execution
 
-        scroll_to_industry_section = WebDriverWait(driver, 10).until(
+        scroll_to_dev_practice_section = WebDriverWait(driver, 10).until(
             EC.presence_of_element_located((By.XPATH, '//*[@id="premium-carousel-f36cd4e"]/ul')))
-        driver.execute_script("arguments[0].scrollIntoView();", scroll_to_industry_section)
+        driver.execute_script("arguments[0].scrollIntoView();", scroll_to_dev_practice_section)
         time.sleep(1)
 
         h5_title = WebDriverWait(driver, 10).until(
@@ -261,9 +262,9 @@ def verify_home_page():
 
         # Our Expertise test case execution
 
-        scroll_to_industry_section = WebDriverWait(driver, 10).until(
+        scroll_to_expertise_section = WebDriverWait(driver, 10).until(
             EC.presence_of_element_located((By.XPATH, '/html/body/div[2]/section[6]')))
-        driver.execute_script("arguments[0].scrollIntoView();", scroll_to_industry_section)
+        driver.execute_script("arguments[0].scrollIntoView();", scroll_to_expertise_section)
         time.sleep(1)
 
         h2_title = WebDriverWait(driver, 10).until(
@@ -394,6 +395,90 @@ def verify_home_page():
             print(expert_image_5_paragraph.text)
         else:
             print("!!!!!!!!!! expert_image_5_paragraph not found !!!!!!!!!!")
+
+        # Engagement model Test case execution
+
+        scroll_to_engagement_section = WebDriverWait(driver, 10).until(
+            EC.presence_of_element_located((By.XPATH, '/html/body/div[2]/section[7]')))
+        driver.execute_script("arguments[0].scrollIntoView();", scroll_to_engagement_section)
+        time.sleep(1)
+
+        h5_title = WebDriverWait(driver, 10).until(
+            EC.presence_of_element_located((By.XPATH, '/html/body/div[2]/section[7]/div/div/div/div[1]/div/h5')))
+        if h5_title.is_displayed():
+            print(h5_title.text)
+        else:
+            print("!!!!!!!!!! h5_title not found !!!!!!!!!!")
+
+        h2_title = WebDriverWait(driver, 10).until(
+            EC.presence_of_element_located((By.XPATH, '/html/body/div[2]/section[7]/div/div/div/div[2]/div/h2')))
+        if h2_title.is_displayed():
+            print(h2_title.text)
+        else:
+            print("!!!!!!!!!! h2_title not found !!!!!!!!!!")
+
+        engagement_image_1 = WebDriverWait(driver, 10).until(
+            EC.presence_of_element_located((By.XPATH, '/html/body/div[2]/section[7]/div/div/div/section/div/div[1]/div/div/div/div/div[1]/span')))
+        if engagement_image_1.is_displayed():
+            print("engagement_image_1 found")
+        else:
+            print("!!!!!!!!!! engagement_image_1 not found !!!!!!!!!!")
+
+        engagement_image_1_tittle = WebDriverWait(driver, 10).until(
+            EC.presence_of_element_located((By.XPATH, '/html/body/div[2]/section[7]/div/div/div/section/div/div[1]/div/div/div/div/div[2]/h5/span')))
+        if engagement_image_1_tittle.is_displayed():
+            print(engagement_image_1_tittle.text)
+        else:
+            print("!!!!!!!!!! engagement_image_1_tittle not found !!!!!!!!!!")
+
+        engagement_image_1_paragraph = WebDriverWait(driver, 10).until(
+            EC.presence_of_element_located((By.XPATH, '/html/body/div[2]/section[7]/div/div/div/section/div/div[1]/div/div/div/div/div[2]/p')))
+        if engagement_image_1_paragraph.is_displayed():
+            print(engagement_image_1_paragraph.text)
+        else:
+            print("!!!!!!!!!! engagement_image_1_paragraph not found !!!!!!!!!!")
+
+        engagement_image_2 = WebDriverWait(driver, 10).until(
+            EC.presence_of_element_located((By.XPATH, '/html/body/div[2]/section[7]/div/div/div/section/div/div[2]/div/div/div/div/div[1]/span')))
+        if engagement_image_2.is_displayed():
+            print("engagement_image_2 found")
+        else:
+            print("!!!!!!!!!! engagement_image_2 not found !!!!!!!!!!")
+
+        engagement_image_2_tittle = WebDriverWait(driver, 10).until(
+            EC.presence_of_element_located((By.XPATH, '/html/body/div[2]/section[7]/div/div/div/section/div/div[2]/div/div/div/div/div[2]/h5/span')))
+        if engagement_image_2_tittle.is_displayed():
+            print(engagement_image_2_tittle.text)
+        else:
+            print("!!!!!!!!!! engagement_image_2_tittle not found !!!!!!!!!!")
+
+        engagement_image_2_paragraph = WebDriverWait(driver, 10).until(
+            EC.presence_of_element_located((By.XPATH, '/html/body/div[2]/section[7]/div/div/div/section/div/div[2]/div/div/div/div/div[2]/p')))
+        if engagement_image_2_paragraph.is_displayed():
+            print(engagement_image_2_paragraph.text)
+        else:
+            print("!!!!!!!!!! engagement_image_2_paragraph not found !!!!!!!!!!")
+
+        engagement_image_3 = WebDriverWait(driver, 10).until(
+            EC.presence_of_element_located((By.XPATH, '/html/body/div[2]/section[7]/div/div/div/section/div/div[3]/div/div/div/div/div[1]/span')))
+        if engagement_image_3.is_displayed():
+            print("engagement_image_3 found")
+        else:
+            print("!!!!!!!!!! engagement_image_3 not found !!!!!!!!!!")
+
+        engagement_image_3_tittle = WebDriverWait(driver, 10).until(
+            EC.presence_of_element_located((By.XPATH, '/html/body/div[2]/section[7]/div/div/div/section/div/div[3]/div/div/div/div/div[2]/h5/span')))
+        if engagement_image_3_tittle.is_displayed():
+            print(engagement_image_3_tittle.text)
+        else:
+            print("!!!!!!!!!! engagement_image_3_tittle not found !!!!!!!!!!")
+
+        engagement_image_3_paragraph = WebDriverWait(driver, 10).until(
+            EC.presence_of_element_located((By.XPATH, '/html/body/div[2]/section[7]/div/div/div/section/div/div[3]/div/div/div/div/div[2]/p')))
+        if engagement_image_3_paragraph.is_displayed():
+            print(engagement_image_3_paragraph.text)
+        else:
+            print("!!!!!!!!!! engagement_image_3_paragraph not found !!!!!!!!!!")
 
     finally:
         driver.quit()
